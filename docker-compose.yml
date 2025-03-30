@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    container_name: flowify_cont
+    restart: always
+    environment:
+      POSTGRES_DB: flowify_db
+      POSTGRES_USER: victoriaschur
+      POSTGRES_PASSWORD: a55602080A
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
